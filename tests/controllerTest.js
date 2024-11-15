@@ -10,15 +10,15 @@ const apiTemperature = require('../public/js/auxiliaryAPI')
 describe("fahrenheitToCelsius()", function(){
 
 	it("Input (F°) below 32", function() {
-	expect(Math.round(apiTemperature.fahrenheitToCelcius(30)*10)/10).to.equal(-1.1)
+	expect(Math.round(apiTemperature.fahrenheitToCelsius(30)*10)/10).to.equal(-1.1)
 	});
 
 	it("Input (F°) equals 0", function() {
-	expect(Math.round(apiTemperature.fahrenheitToCelcius(0)*10)/10).to.equal(-17.8)
+	expect(Math.round(apiTemperature.fahrenheitToCelsius(0)*10)/10).to.equal(-17.8)
 	});
 
 	it("Input (F°) above 32", function() {
-	expect(Math.round(apiTemperature.fahrenheitToCelcius(34)*10)/10).to.equal(1.1)
+	expect(Math.round(apiTemperature.fahrenheitToCelsius(34)*10)/10).to.equal(1.1)
 	});
 });
 
@@ -63,7 +63,6 @@ describe("getGreetingsDependendOnTime", function() {
 	});
 
 	// testing if an time is inputted as str object
-
 	it("Input is non-date-object", function() {
 		expect(() => apiTemperature.getGreetingDependOnTime("06:00")).to.throw(Error, "Invalid input: expected a date object");
 	});
