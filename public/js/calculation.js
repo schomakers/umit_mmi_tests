@@ -2,11 +2,11 @@ const powerButton = document.getElementById("display");
 
 let temperature = 21, mode = "summer", level = 0, isOn = true;
 
-
-const dateObj = document.getElementById("date");
-const temperatureObj = document.getElementById("temperature");
-const levelObj = document.getElementById("level");
-const modusObj = document.getElementById("modus");
+// Konstanten groß schreiben
+const DATEOBJ = document.getElementById("date");
+const TEMPERATUREOBJ = document.getElementById("temperature");
+const LEVELOBJ = document.getElementById("level");
+const MODUSOBJ = document.getElementById("modus");
 
 document.getElementById("on-off-button").addEventListener("click", turnOnOff);
 document.getElementById("level-button").addEventListener("click", levelChange);
@@ -17,7 +17,7 @@ document.getElementById("minus-button").addEventListener("click", decreaseTemper
 const time = () => setInterval(updateTime, 1000)
 
 function updateTime() {
-    dateObj.innerText = new Date().toLocaleString('en-GB', {timeZone: 'UTC'}) + " - "
+    DATEOBJ.innerText = new Date().toLocaleString('en-GB', {timeZone: 'UTC'}) + " - "
         + getGreetingDependOnTime(new Date());
 }
 
@@ -30,13 +30,13 @@ function turnOnOff() {
 
 function updateDisplay() {
     if (!isOn) {
-        temperatureObj.innerText = `Temperatur: ${temperature} Celsius`
-        levelObj.innerText = `Level: ${level}`
-        modusObj.innerText = `Modus: ${mode}`
+        TEMPERATUREOBJ.innerText = `Temperatur: ${temperature} Celsius`
+        LEVELOBJ.innerText = `Level: ${level}`
+        MODUSOBJ.innerText = `Modus: ${mode}`
     } else {
-        temperatureObj.innerText = ""
-        levelObj.innerText = ""
-        modusObj.innerText = ""
+        TEMPERATUREOBJ.innerText = ""
+        LEVELOBJ.innerText = ""
+        MODUSOBJ.innerText = ""
     }
 }
 
